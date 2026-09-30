@@ -1,49 +1,49 @@
 # Coding done by Spencer Kemp
-
-iMoneyList = []
-iSmallPurchase = 0
-iMediumPurchase = 0
-iLargePurchase = 0
-iNumPurchase = 0
+# Changed variables to snake case
+money_list = []
+small_purchase = 0
+medium_purchase = 0
+large_purchase = 0
+num_purchase = 0
 
 # Creation of the user's shopping spree
-while 0 not in iMoneyList:
+while 0 not in money_list:
     
-    iMoneyInput = float(input("Enter an expense or 0 to finish: "))
-    iMoneyInput = int(iMoneyInput * 100) / 100
-    if iMoneyInput >= 0:
-        iMoneyList.append(iMoneyInput)
-        iNumPurchase += 1
-        print(iMoneyList)
-        print(iNumPurchase)
-        if iMoneyInput > 0 and iMoneyInput < 25:
-            iSmallPurchase += 1
-        elif iMoneyInput >= 25 and iMoneyInput <= 100:
-            iMediumPurchase += 1
-        elif iMoneyInput > 100:
-            iLargePurchase += 1
+    money_input = float(input("Enter an expense or 0 to finish: "))
+    money_input = int(money_input * 100) / 100
+    if money_input >= 0:
+        money_list.append(money_input)
+        num_purchase += 1
+        
+        
+        if money_input > 0 and money_input < 25:
+            small_purchase += 1
+        elif money_input >= 25 and money_input <= 100:
+            medium_purchase += 1
+        elif money_input > 100:
+            large_purchase += 1
     else:
         print("Number can't be negative.")
         continue
 
 # New variables
-iNumPurchase = iNumPurchase - 1
-iMoneyList = iMoneyList[:-1]
-print(iMoneyList)
-iTotalCost = sum(iMoneyList)
-iAverageCost = iTotalCost / len(iMoneyList)
-iAverageCost = int(iAverageCost * 100) / 100
-iSmallestCost = min(iMoneyList)
-iLargestCost = max(iMoneyList)
+num_purchase = num_purchase - 1
+money_list = money_list[:-1]
+
+total_cost = sum(money_list)
+average_cost = total_cost / len(money_list)
+average_cost = int(average_cost * 100) / 100
+smallest_cost = min(money_list)
+largest_cost = max(money_list)
 
 # Displaying the user's shopping spree
 print("\n""Expense Summary")
 print("-----------------")
-print(f"Number of expenses: {iNumPurchase}")
-print(f"Total: ${iTotalCost}")
-print(f"Average: ${iAverageCost}")
-print(f"Smallest expense: ${iSmallestCost}")
-print(f"Largest expense: ${iLargestCost}")
-print("\n"f"Small expenses: {iSmallPurchase}")
-print(f"Moderate expenses: {iMediumPurchase}")
-print(f"Large expenses: {iLargePurchase}")
+print(f"Number of expenses: {num_purchase}")
+print(f"Total: ${total_cost}")
+print(f"Average: ${average_cost}")
+print(f"Smallest expense: ${smallest_cost}")
+print(f"Largest expense: ${largest_cost}")
+print("\n"f"Small expenses: {small_purchase}")
+print(f"Moderate expenses: {medium_purchase}")
+print(f"Large expenses: {large_purchase}")

@@ -5,3 +5,8 @@ for i in list:
         print(f"{i} is an even number")
     else:
         print(f"{i} is an odd number")
+
+numbers = [1,2,3,4,5]
+for i in range(0,5):
+    num_square = i ** 2
+    print(f"{i} squared is {num_square}")
