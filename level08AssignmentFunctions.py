@@ -1,3 +1,4 @@
+# work of Spencer Kemp
 import random
 
 class BankAccount:
